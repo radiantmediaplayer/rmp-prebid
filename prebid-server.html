@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Using Prebid.js with Radiant Media Player (Prebid Server) - Instream Video</title>
+
+  <!-- Radiant Media Player core library - debug browser console mode (use rmp.min.js for production) -->
+  <script src="https://cdn.radiantmediatechs.com/rmp/v4/latest/js/rmp.debug.js"></script>
+  <!-- prebid.js -->
+  <!-- this is an unoptimized build for the purpose of this demo -->
+  <!-- see https://github.com/prebid/Prebid.js/#Build to produce a production build specific to your project -->
+  <script src="js/Prebid.js/1.7.0/prebid.js"></script>
+  <!-- we define our Prebid Server config here - just after prebid.js inclusion -->
+  <script src="js/prebid-config-prebid-server.js"></script>
+</head>
+
+<body>
+
+  <h1>Using Prebid.js with Radiant Media Player (Prebid Server)</h1>
+  <h2>Instream Video</h2>
+  <!-- player container -->
+  <div id="rmpPlayer"></div>
+  <!-- player app logic -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
