@@ -19,7 +19,7 @@ See `client-side-adapter.html`.  [A working example can be found here](https://w
 ### Production notes
 The above examples are start points to best implement header bidding for Radiant Media Player through Prebid.js. For production usage you will need to:
 - configure Radiant Media Player with your settings and use our production core library (rmp.min.js)
-- configure your prebid according to requirements
+- configure your prebid according to your requirements and adserver
 - use a prebid.js custom build that only encompasses your target bidders
 
 ## License 
