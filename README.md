@@ -1,5 +1,5 @@
 # rmp-prebid
-Implements header bidding for Radiant Media Player through [Prebid.js](https://github.com/prebid/Prebid.js/).
+Implements header bidding for [Radiant Media Player](https://www.radiantmediaplayer.com) through [Prebid.js](https://github.com/prebid/Prebid.js/).
 
 ## Header Bidding
 Header Bidding (also known as header auctions, parallel bidding, or header bidding) is a technique that involves running SSP & Ad Exchange code directly on page so publishers can receive bids on their inventory that may be unavailable through their primary ad server and exchange.
