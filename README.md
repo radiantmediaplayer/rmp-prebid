@@ -11,7 +11,7 @@ More information on the subject can be found [here](http://prebid.org/overview/i
 In this repository, we will show how to set up Prebid to show a video ad from DFP. We will use Radiant Media Player and the AppNexus AST bidder, but the principles are the same across video-enabled bidders. Examples will focus on instream video ads. Other set-up, like with outstream video ads are possible but not covered here, though indications provided should help fit your custom requirements. Code is commented at key points for a better understanding of how Prebid.js can work with Radiant Media Player.
 
 ### Prebid.js with Radiant Media Player: client-side adapter
-See `client-side-adapter.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-prebid/client-side-adapter.html).
+See `client-side-adapter.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/client-side-adapter.html).
 
 ### Prebid.js with Radiant Media Player: Prebid Server
 [Prebid Server](https://github.com/prebid/prebid-server) is a server side component to offload prebid processing to the cloud. More information can be found [here](http://prebid.org/dev-docs/get-started-with-prebid-server.html). Using Prebid Server with Radiant Media Player can be achieved by using a specific Prebid Server config. See `prebid-server.html`.
