@@ -1,6 +1,6 @@
 /* do not wrap this in a self-executing or deferred function - it messes with prebid.js */
 
-/* essentially this is the same logic as with prebid-config-client-side-adapter.js but the config changes to enable Prebid server */
+/* essentially this is the same logic as with config-client-side-adapter.js but the config changes to enable Prebid server */
 
 /* our app variables */
 window.pbApp = {};
