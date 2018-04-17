@@ -7,6 +7,8 @@ Header Bidding (also known as header auctions, parallel bidding, or header biddi
 The returned bids are then passed into the ad server so they can compete with direct demand and the primary ad server's exchange on a level playing field.
 More information on the subject can be found [here](http://prebid.org/overview/intro.html) and [here](http://www.adopsinsider.com/header-bidding/header-bidding-step-by-step/).
 
+A list of bidders with video ads support [can be found here](http://prebid.org/dev-docs/bidders.html#bidders-with-video-and-native-demand).
+
 ## Prebid video
 In this repository, we will show how to set up Prebid to show a video ad from DFP. We will use Radiant Media Player and the AppNexus AST bidder, but the principles are the same across video-enabled bidders. Examples will focus on instream video ads. Other set-up, like with outstream video ads are possible but not covered here, though indications provided should help fit your custom requirements. Code is commented at key points for a better understanding of how Prebid.js can work with Radiant Media Player.
 

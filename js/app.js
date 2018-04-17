@@ -9,7 +9,9 @@
       return;
     }
     window.pbApp.playerSetup = true;
-    console.log('Prebid VAST url = ' + adTagUrl);
+    if (window.pbApp.debug) {
+      window.console.log('invokeVideoPlayer with Prebid VAST url = ' + adTagUrl);
+    }
     var bitrates = {
       mp4: [
         'https://www.rmp-streaming.com/media/bbb-360p.mp4'

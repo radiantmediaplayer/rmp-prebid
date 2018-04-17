@@ -6,9 +6,14 @@
 window.pbApp = {};
 window.pbApp.playerSetup = false;
 window.pbApp.prebidTempTag = false;
+window.pbApp.debug = false;
 /* in case pre-bidding takes too long or fails we provide a playerSetupTimeout and fallbackAdTagUrl to insure player setup happens */
 window.pbApp.playerSetupTimeout = 5000;
 window.pbApp.fallbackAdTagUrl = 'https://www.radiantmediaplayer.com/vast/tags/inline-linear.xml';
+/* no console - no logs */
+if (typeof window.console === 'undefined' || typeof window.console.log === 'undefined') {
+  window.pbApp.debug = false;
+}
 
 
 /* invokeVideoPlayer may not be defined when bidsBackHandler runs */
@@ -73,6 +78,9 @@ pbjs.que.push(function () {
 
   pbjs.requestBids({
     bidsBackHandler: function (bids) {
+      if (window.pbApp.debug) {
+        window.console.log(bids);
+      }
       var videoUrl = pbjs.adServers.dfp.buildVideoUrl({
         adUnit: videoAdUnit,
         params: {
@@ -105,7 +113,7 @@ pbjs.bidderSettings =
           }
         }, {
           key: 'hb_pb',
-          val: function (bidResponse) {
+          val: function () {
             return '10.00';
           }
         }, {
