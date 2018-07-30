@@ -15,13 +15,14 @@ if (typeof window.console === 'undefined' || typeof window.console.log === 'unde
 
 
 /* invokeVideoPlayer may not be defined when bidsBackHandler runs */
-/* we pre-defined it here so as to capture the returned adTagUrl to be passed to the player */ 
+/* we pre-defined it here so as to capture the returned adTagUrl to be passed to the player */
 window.pbApp.invokeVideoPlayer = function (adTagUrl) {
   window.pbApp.prebidTempTag = adTagUrl;
 };
 
 /* prebid.js variables */
-var pbjs = pbjs || {};
+var pbjs;
+pbjs = pbjs || {};
 pbjs.que = pbjs.que || [];
 
 
@@ -78,32 +79,31 @@ pbjs.que.push(function () {
   });
 });
 
-pbjs.bidderSettings =
-  {
-    standard: {
-      adserverTargeting: [
-        {
-          key: 'hb_bidder',
-          val: function (bidResponse) {
-            return bidResponse.bidderCode;
-          }
-        }, {
-          key: 'hb_adid',
-          val: function (bidResponse) {
-            return bidResponse.adId;
-          }
-        }, {
-          key: 'hb_pb',
-          val: function () {
-            return '10.00';
-          }
-        }, {
-          key: 'hb_size',
-          val: function (bidResponse) {
-            return bidResponse.size;
-
-          }
+pbjs.bidderSettings = {
+  standard: {
+    adserverTargeting: [
+      {
+        key: 'hb_bidder',
+        val: function (bidResponse) {
+          return bidResponse.bidderCode;
         }
-      ]
-    }
-  };
+      }, {
+        key: 'hb_adid',
+        val: function (bidResponse) {
+          return bidResponse.adId;
+        }
+      }, {
+        key: 'hb_pb',
+        val: function () {
+          return '10.00';
+        }
+      }, {
+        key: 'hb_size',
+        val: function (bidResponse) {
+          return bidResponse.size;
+
+        }
+      }
+    ]
+  }
+};
