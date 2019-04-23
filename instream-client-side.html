@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Using Prebid.js with Radiant Media Player (client-side adapter) -
+    Instream Video</title>
+  <!-- Radiant Media Player core library - debug browser console mode (use rmp.min.js for production) -->
+  <script
+    src="https://cdn.radiantmediatechs.com/rmp/5.1.11/js/rmp.debug.js"></script>
+</head>
+
+<body>
+
+  <h1>Using Prebid.js with Radiant Media Player (client-side adapter)</h1>
+  <h2>Instream Video (muted autoplay)</h2>
+  <p>Go back to <a
+      href="https://github.com/radiantmediaplayer/rmp-prebid">GitHub</a></p>
+  <p>Go back to <a
+      href="https://www.radiantmediaplayer.com/docs/latest/header-bidding.html">Radiant
+      Media Player docs</a></p>
+  <p>You may need to reload this demo page to get a fill on the adTag request
+  </p>
+  <!-- player container -->
+  <div id="rmpPlayer"></div>
+  <!-- prebid.js -->
+  <!-- this is an unoptimized build for the purpose of this demo -->
+  <!-- see https://prebid.org/download.html or https://github.com/prebid/Prebid.js/#Build to produce a production build specific to your project-->
+  <script async
+    src="https://acdn.adnxs.com/prebid/not-for-prod/1/prebid.js"></script>
+  <!-- player app logic -->
+  <script src="js/instream-client-side.js"></script>
+
+</body>
+
+</html>
