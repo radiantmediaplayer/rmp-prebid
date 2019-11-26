@@ -58,8 +58,9 @@ pbjs.que.push(function () {
       url: 'https://prebid.adnxs.com/pbc/v1/cache'
     },
     debug: true,
+    enableSendAllBids: true,
     s2sConfig: {
-      endpoint: 'http://prebid.adnxs.com/pbs/v1/openrtb2/auction',
+      endpoint: 'https://prebid.adnxs.com/pbs/v1/openrtb2/auction',
       enabled: true,
       accountId: 'c9d412ee-3cc6-4b66-9326-9f49d528f13e',
       bidders: ['appnexus']
