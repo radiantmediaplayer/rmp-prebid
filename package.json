@@ -1,0 +1,24 @@
+{
+  "name": "rmp-prebid",
+  "version": "1.0.1",
+  "author": "Radiant Media Player <support@radiantmediaplayer.com>",
+  "description": "Implements header bidding for Radiant Media Player through Prebid.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radiantmediaplayer/rmp-prebid.git"
+  },
+  "main": "js/instream-client-side.js",
+  "keywords": [
+    "vast",
+    "advertising",
+    "video",
+    "html5",
+    "javascript",
+    "prebid"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radiantmediaplayer/rmp-prebid/issues"
+  },
+  "homepage": "https://www.radiantmediaplayer.com/docs/latest/header-bidding.html"
+}

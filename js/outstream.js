@@ -1,5 +1,5 @@
-/* our app where we run player */
-/* our app variables */
+/* our app where we run player
+   our app variables */
 var pbjs;
 pbjs = pbjs || {};
 pbjs.que = pbjs.que || [];
@@ -9,7 +9,9 @@ if (typeof window.console === 'undefined' || typeof window.console.log === 'unde
 }
 var videoId = 'video1';
 
-// adUnit
+/* Prebid video ad unit
+   This is a working example but you must use your own settings/bidders for production
+   More docs at https://prebid.org/prebid-video/video-overview.html */
 var adUnits = [{
   code: videoId,
   mediaTypes: {

@@ -1,20 +1,20 @@
-/* our app where we run player */
-/* redefines invokeVideoPlayer */
-/* our app variables */
+/* our app where we run player
+   our app variables */
 var pbApp = {};
 pbApp.playerSetup = false;
 pbApp.prebidTempTag = false;
 pbApp.debug = true;
-/* in case pre-bidding takes too long or fails we provide a playerSetupTimeout and fallbackAdTagUrl to insure player setup happens */
+/* in case pre-bidding takes too long or fails we provide a playerSetupTimeout and fallbackAdTagUrl 
+   to insure player setup happens - this is optional */
 pbApp.playerSetupTimeout = 5000;
-pbApp.fallbackAdTagUrl = 'https://www.radiantmediaplayer.com/vast/tags/inline-linear.xml';
+pbApp.fallbackAdTagUrl = 'https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml';
 /* no console - no logs */
 if (typeof window.console === 'undefined' || typeof window.console.log === 'undefined' || typeof window.console.dir === 'undefined') {
   pbApp.debug = false;
 }
 
-/* invokeVideoPlayer may not be defined when bidsBackHandler runs */
-/* we pre-defined it here so as to capture the returned adTagUrl to be passed to the player */
+/* invokeVideoPlayer may not be defined when bidsBackHandler runs
+   we pre-defined it here so as to capture the returned adTagUrl to be passed to the player */
 pbApp.invokeVideoPlayer = function (adTagUrl) {
   pbApp.prebidTempTag = adTagUrl;
 };
@@ -24,9 +24,9 @@ var pbjs;
 pbjs = pbjs || {};
 pbjs.que = pbjs.que || [];
 
-/* Prebid video ad unit */
-/* This is a working example but you must use your own settings/bidders for production */
-/* More docs at https://prebid.org/prebid-video/video-overview.html */
+/* Prebid video ad unit
+   This is a working example but you must use your own settings/bidders for production
+   More docs at https://prebid.org/prebid-video/video-overview.html */
 var videoAdUnit = {
   code: 'video1',
   mediaTypes: {
@@ -89,6 +89,7 @@ pbjs.que.push(function () {
   });
 });
 
+/* here we re-define invokeVideoPlayer with Radiant Media Player set-up */
 pbApp.invokeVideoPlayer = function (adTagUrl) {
   if (pbApp.playerSetup) {
     return;
@@ -132,8 +133,8 @@ if (pbApp.prebidTempTag) {
   pbApp.prebidTempTag = false;
 }
 
-/* in case something went wrong (latency, network errors, bid issues ...) and we have no winning bid we still need to run the player  */
-/* this is done after pbApp.playerSetupTimeout ms and we use fallbackAdTagUrl as adTagUrl to pass to the player */
+/* in case something went wrong (latency, network errors, bid issues ...) and we have no winning bid we still need to run the player
+   this is done after pbApp.playerSetupTimeout ms and we use fallbackAdTagUrl as adTagUrl to pass to the player */
 setTimeout(function () {
   if (pbApp.playerSetup) {
     return;
