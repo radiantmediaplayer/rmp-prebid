@@ -98,14 +98,14 @@ pbApp.invokeVideoPlayer = function (adTagUrl) {
   if (pbApp.debug) {
     window.console.log('invokeVideoPlayer with Prebid VAST url = ' + adTagUrl);
   }
-  var bitrates = {
+  var src = {
     mp4: [
       'https://www.rmp-streaming.com/media/bbb-360p.mp4'
     ]
   };
   var settings = {
     licenseKey: 'your-license-key',
-    bitrates: bitrates,
+    src: src,
     width: 640,
     height: 360,
     // we enabled ads for our player 
