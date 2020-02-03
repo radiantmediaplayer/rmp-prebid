@@ -104,8 +104,6 @@ pbApp.invokeVideoPlayer = function (adTagUrl) {
     muted: true,
     // we use Google IMA in this demo, but you can use rmp-vast as well depending on your requirements
     adParser: 'ima',
-    // since we may request a skippable ads we set adDisableCustomPlaybackForIOS10Plus: true to allow rendering of skippable ads on iOS
-    adDisableCustomPlaybackForIOS10Plus: true,
     // here is our winner VAST adTagUrl
     adTagUrl: adTagUrl,
     poster: 'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg'
