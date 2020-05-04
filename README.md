@@ -27,9 +27,15 @@ The above examples are start points to best implement header bidding for Radiant
 - configure your prebid according to your requirements and adserver
 - use a prebid.js custom build that only encompasses your target bidders
 
-## License 
-rmp-prebid examples are released under MIT License
+## License for rmp-prebid
+rmp-prebid is released under MIT License
 
-Prebid.js is released under Apache License 2.0
+## License for Prebid.js
+Prebid.js is released under [Apache License 2.0](https://github.com/prebid/Prebid.js/blob/master/LICENSE)
 
-Radiant Media Player is a commercial HTML5 video player and has its own license which can be found here: [https://www.radiantmediaplayer.com/terms-of-service.html](https://www.radiantmediaplayer.com/terms-of-service.html)
+## License for Radiant Media Player
+Radiant Media Player is a commercial HTML5 media player, not covered by the above MIT license. 
+
+Radiant Media Player license can be found here: [https://www.radiantmediaplayer.com/terms-of-service.html](https://www.radiantmediaplayer.com/terms-of-service.html). 
+
+You may request a free trial for Radiant Media Player at: [https://www.radiantmediaplayer.com/free-trial.html](https://www.radiantmediaplayer.com/free-trial.html).
