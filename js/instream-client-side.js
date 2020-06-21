@@ -89,7 +89,7 @@ pbApp.invokeVideoPlayer = function (adTagUrl) {
   }
   var src = {
     mp4: [
-      'https://www.rmp-streaming.com/media/bbb-360p.mp4'
+      'https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4'
     ]
   };
   var settings = {

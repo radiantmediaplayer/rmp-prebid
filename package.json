@@ -1,6 +1,6 @@
 {
   "name": "rmp-prebid",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "author": "Radiant Media Player <support@radiantmediaplayer.com>",
   "description": "Implements header bidding for Radiant Media Player through Prebid.js",
   "repository": {
