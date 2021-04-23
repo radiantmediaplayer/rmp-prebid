@@ -113,12 +113,15 @@ pbApp.invokeVideoPlayer = function (adTagUrl) {
     // note that we requested a winning bid for skippable auto_play_sound_off so player starts muted autoplay
     ads: true,
     autoplay: true,
-    muted: true,
     // we use Google IMA in this demo, but you can use rmp-vast as well depending on your requirements
     adParser: 'ima',
     // here is our winner VAST adTagUrl
     adTagUrl: adTagUrl,
-    poster: 'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg'
+    contentMetadata: {
+      poster: [
+        'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg'
+      ]
+    }
   };
   var elementID = 'rmpPlayer';
   var rmp = new RadiantMP(elementID);
