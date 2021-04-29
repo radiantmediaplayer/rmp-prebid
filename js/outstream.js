@@ -12,7 +12,7 @@ const invokeVideoPlayer = function (adTagUrl, xml) {
   window.console.log('invokeVideoPlayer with Prebid VAST url');
   window.console.log(adTagUrl);
   const settings = {
-    licenseKey: 'Kl8lZ292K3N6Mm9pZz9yb201ZGFzaXMzMGRiMEElXyo=',
+    licenseKey: 'your-license-key',
     width: 640,
     height: 360,
     autoplay: true,
@@ -58,11 +58,11 @@ if (window.pbjs) {
       }
     }]
   }];
-  pbjs.que.push(function () {
+  pbjs.que.push(() => {
     pbjs.addAdUnits(adUnits);
     pbjs.requestBids({
       timeout: 1000,
-      bidsBackHandler: function (bids) {
+      bidsBackHandler: (bids) => {
         window.console.log('winning bid follows');
         window.console.log(bids);
         // we get the VAST XML from bids adResponse and pass it to our outstream player

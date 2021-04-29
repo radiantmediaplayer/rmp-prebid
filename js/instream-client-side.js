@@ -16,7 +16,7 @@ const invokeVideoPlayer = function (adTagUrl) {
     ]
   };
   const settings = {
-    licenseKey: 'Kl8lZ292K3N6Mm9pZz9yb201ZGFzaXMzMGRiMEElXyo=',
+    licenseKey: 'your-license-key',
     src: src,
     width: 640,
     height: 360,
