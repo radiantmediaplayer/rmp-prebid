@@ -10,21 +10,24 @@ More information on the subject can be found [here](https://prebid.org/overview/
 A list of bidders with video ads support [can be found here](https://prebid.org/dev-docs/bidders.html#bidders-with-video-and-native-demand).
 
 ## Prebid video
-In this repository, we will show how to set up Prebid with Radiant Media Player to show instream video ads with our client side adapter, instream video ads using Prebid Server and outstream video ads. Prebid.js for video overview [can be found here](https://prebid.org/prebid-video/video-overview.html).
+In this repository, we will show how to set up Prebid with Radiant Media Player to show instream video ads with our client side adapter, using Prebid Server, outstream video ads and our ad-scheduler. Prebid.js for video overview [can be found here](https://prebid.org/prebid-video/video-overview.html).
 
-### Prebid.js with Radiant Media Player: client-side adapter
+### client-side adapter
 See `instream-client-side.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/instream-client-side.html).
 
-### Prebid.js with Radiant Media Player: Prebid Server
+### Prebid Server
 See `instream-prebid-server.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/instream-prebid-server.html).
 
-### Prebid.js with Radiant Media Player: Outstream video ads
+### Outstream video ads
 See `outstream.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/outstream.html).
+
+### Ad-scheduling
+See `ad-scheduling-client-side.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/ad-scheduling-client-side.html).
 
 ### Production notes
 The above examples are start points to best implement header bidding for Radiant Media Player through Prebid.js. For production usage you will need to:
-- configure Radiant Media Player with your settings and use our production core library (rmp.min.js)
-- configure your prebid according to your requirements and adserver
+- configure Radiant Media Player with your settings
+- configure prebid according to your requirements and ad-server
 - use a prebid.js custom build that only encompasses your target bidders
 
 ## License for rmp-prebid

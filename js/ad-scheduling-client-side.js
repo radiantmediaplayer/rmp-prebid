@@ -2,8 +2,61 @@
 const fallbackVastTagUrl = 'https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml';
 let playerHasBeenSetup = false;
 /* timeout before we consider a bid invalid and resume player set up with fallbackVastTagUrl */
-const timeoutForBidToResolve = 5000;
+const timeoutForBidToResolve = 50;
 let bidTimeout = null;
+
+/* Prebid video ad unit - midroll and postroll in our ad-schedule
+   we use the adScheduleCallback player setting to pass an async function to get 
+   a winning bid */
+const adScheduleCallback = function () {
+  return new Promise((resolve, reject) => {
+    const promiseTimeout = setTimeout(() => {
+      window.console.log('reject adScheduleCallback');
+      reject();
+    }, 5000);
+    const videoAdUnit = {
+      code: 'video',
+      mediaTypes: {
+        video: {
+          context: 'instream',
+          playerSize: [640, 480]
+        },
+      },
+      bids: [{
+        bidder: 'appnexus',
+        params: {
+          placementId: 13232361,
+          video: {
+            skippable: true,
+            playback_methods: ['auto_play_sound_off']
+          }
+        }
+      }]
+    };
+    pbjs.que.push(() => {
+      pbjs.addAdUnits(videoAdUnit);
+      pbjs.setConfig({
+        cache: {
+          url: 'https://prebid.adnxs.com/pbc/v1/cache'
+        }
+      });
+      pbjs.requestBids({
+        bidsBackHandler: (bids) => {
+          window.console.log('winning bid follows');
+          window.console.log(bids);
+          const videoUrl = pbjs.adServers.dfp.buildVideoUrl({
+            adUnit: videoAdUnit,
+            params: {
+              iu: '/19968336/prebid_cache_video_adunit'
+            }
+          });
+          clearTimeout(promiseTimeout);
+          resolve(videoUrl);
+        }
+      });
+    });
+  });
+};
 
 /* function to be called when player needs to be displayed */
 const invokeVideoPlayer = function (adTagUrl) {
@@ -28,7 +81,19 @@ const invokeVideoPlayer = function (adTagUrl) {
     // we use Google IMA in this demo, but you can use rmp-vast as well depending on your requirements
     adParser: 'ima',
     // here is our winner VAST adTagUrl
-    adTagUrl: adTagUrl,
+    adScheduleCallback: adScheduleCallback,
+    //adParser: 'rmp-vast',
+    // Pass ad schedule
+    adSchedule: {
+      // Preroll
+      preroll: adTagUrl,
+      // Midroll
+      midroll: [
+        [30, 'callback']
+      ],
+      // Postroll
+      postroll: 'callback'
+    },
     contentMetadata: {
       poster: [
         'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg'
@@ -66,7 +131,8 @@ if (window.pbjs) {
       }
     }]
   };
-  pbjs.que.push(() => {
+
+  pbjs.que.push(function () {
     pbjs.addAdUnits(videoAdUnit);
     pbjs.setConfig({
       //debug: true,

@@ -10,8 +10,12 @@
     crossorigin="anonymous">
   <title>Using Prebid.js with Radiant Media Player (Prebid Server) -
     Instream Video</title>
+  <!-- prebid.js -->
+  <!-- this is an unoptimized build for the purpose of this demo -->
+  <!-- see https://prebid.org/download.html or https://github.com/prebid/Prebid.js/#Build to produce a production build specific to your project-->
+  <script src="https://acdn.adnxs.com/prebid/not-for-prod/prebid.js"></script>
   <!-- Radiant Media Player core library - debug browser console mode (use rmp.min.js for production) -->
-  <script src="https://cdn.radiantmediatechs.com/rmp/5.12.9/js/rmp.min.js"></script>
+  <script src="https://cdn.radiantmediatechs.com/rmp/6.0.0/js/rmp.min.js"></script>
 </head>
 
 <body>
@@ -31,10 +35,6 @@
       </div>
     </div>
   </div>
-  <!-- prebid.js -->
-  <!-- this is an unoptimized build for the purpose of this demo -->
-  <!-- see https://prebid.org/download.html or https://github.com/prebid/Prebid.js/#Build to produce a production build specific to your project-->
-  <script src="https://acdn.adnxs.com/prebid/not-for-prod/prebid.js"></script>
   <!-- player app logic -->
   <script src="js/instream-prebid-server.js"></script>
 
