@@ -1,34 +1,31 @@
 # rmp-prebid
-Implements header bidding for [Radiant Media Player](https://www.radiantmediaplayer.com) through [Prebid.js](https://github.com/prebid/Prebid.js/).
+Implements header bidding for [Radiant Media Player](https://www.radiantmediaplayer.com) through [Prebid.js](https://prebid.org/).
 
 ## Header Bidding
-Header Bidding (also known as header auctions, parallel bidding, or header bidding) is a technique that involves running SSP & Ad Exchange code directly on page so publishers can receive bids on their inventory that may be unavailable through their primary ad server and exchange.
+Header Bidding (also known as header auctions, parallel bidding, or header bidding) is a technique that involves running SSP and Ad Exchange code directly on page so publishers can receive bids on their inventory that may be unavailable through their primary ad server and exchange.
 
 The returned bids are then passed into the ad server so they can compete with direct demand and the primary ad server's exchange on a level playing field.
 More information on the subject can be found [here](https://prebid.org/overview/intro.html) and [here](https://www.adopsinsider.com/header-bidding/header-bidding-step-by-step/).
 
-A list of bidders with video ads support [can be found here](https://prebid.org/dev-docs/bidders.html#bidders-with-video-and-native-demand).
+Before using a specific Prebid bidder, make sure that it supports video ad format.
 
 ## Prebid video
-In this repository, we will show how to set up Prebid with Radiant Media Player to show instream video ads with our client side adapter, using Prebid Server, outstream video ads and our ad-scheduler. Prebid.js for video overview [can be found here](https://prebid.org/prebid-video/video-overview.html).
+In this repository, we will show how to set up Prebid.js with Radiant Media Player to show instream video ads, outstream video ads and ad-scheduling (pre/mid/post roll) with Prebid.js. Code in this repository has been written with Radiant Media Player 9.2.0 and Prebid.js 7.45.0.
 
-### client-side adapter
-See `instream-client-side.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/instream-client-side.html).
+### Instream video ads
+See `instream.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/instream.html).
 
-### Prebid Server
-See `instream-prebid-server.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/instream-prebid-server.html).
-
-### Outstream video ads
-See `outstream.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/outstream.html).
+### Outstream video ads (Google IMA SDK)
+See `outstream-ima.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/outstream-ima.html).
 
 ### Ad-scheduling
-See `ad-scheduling-client-side.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/ad-scheduling-client-side.html).
+See `instream-schedule.html`.  [A working example can be found here](https://www.radiantmediaplayer.com/docs/latest/gist/rmp-pb/instream-schedule.html).
 
 ### Production notes
 The above examples are start points to best implement header bidding for Radiant Media Player through Prebid.js. For production usage you will need to:
 - configure Radiant Media Player with your settings
-- configure prebid according to your requirements and ad-server
-- use a prebid.js custom build that only encompasses your target bidders
+- configure Prebid according to your requirements
+- use a Prebid.js custom build that only encompasses your target bidders
 
 ## License for rmp-prebid
 rmp-prebid is released under MIT License
